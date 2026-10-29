@@ -56,7 +56,7 @@ Behaviour details:
 # flake.nix
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-  inputs.noctalia-minimizer.url = "github:SwashX-dev/noctalia-minimizer";
+  inputs.noctalia-minimizer.url = "github:SwashX-dev/Noc-minimizer";
   inputs.noctalia-minimizer.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = { nixpkgs, noctalia-minimizer, ... }: {
@@ -71,11 +71,6 @@ Behaviour details:
   };
 }
 ```
-
-> The repository is private. Nix can only fetch it with credentials: add
-> `access-tokens = github.com=<token>` to the `nix.conf` of the user that evaluates the
-> configuration, or use `git+ssh://git@github.com/SwashX-dev/noctalia-minimizer` with an SSH key.
-> Alternatively use a local checkout: `inputs.noctalia-minimizer.url = "path:/path/to/noctalia-minimizer";`.
 
 ### NixOS without flakes (channels)
 
@@ -101,7 +96,7 @@ sudo nixos-rebuild build && sudo nixos-rebuild switch
 ### Other systems with Nix (per user)
 
 ```bash
-nix profile add github:SwashX-dev/noctalia-minimizer
+nix profile add github:SwashX-dev/Noc-minimizer
 ```
 
 This installs `noctalia-minimizer`, `noctalia-minimizer-setup` and the plugin under
