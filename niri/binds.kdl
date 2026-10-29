@@ -1,0 +1,7 @@
+// Noctalia Minimizer key bindings for Niri.
+// Included from the user's config with:  include optional=true "<this file>"
+// `noctalia-minimizer-setup check` reports conflicts with existing bindings.
+binds {
+    Mod+M hotkey-overlay-title="Minimize active window" { spawn "noctalia" "msg" "plugin" "local/minimizer:actions" "all" "minimize"; }
+    Mod+Shift+M hotkey-overlay-title="Minimized windows" { spawn "noctalia" "msg" "plugin" "local/minimizer:actions" "all" "windows"; }
+}

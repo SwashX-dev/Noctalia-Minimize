@@ -1,0 +1,6 @@
+{
+  "settings.enabled": "Enable window minimization",
+  "settings.auto_restore": "Restore parked windows when selected in the taskbar",
+  "settings.auto_restore.description": "Uses one idle `niri msg --json event-stream` client while the plugin is loaded.",
+  "settings.confirm_minimize_all": "Ask before minimizing all windows"
+}
