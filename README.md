@@ -1,4 +1,6 @@
-# Noctalia Minimizer
+# Noctalia Minimize
+
+The interface is branded **Noctalia Minimize**. Existing command names, plugin IDs, NixOS options and data paths remain unchanged for compatibility.
 
 Reversible window minimization for the [Niri](https://github.com/YaLTeR/niri) Wayland compositor,
 as a native [Noctalia Shell](https://noctalia.dev) v5 plugin.
@@ -8,18 +10,20 @@ it safely with **workspace parking**: a minimized window is moved (without focus
 named workspace and remembered together with its original workspace. Restoring moves it back.
 Applications keep running the whole time; nothing is closed, killed or hidden from Niri.
 
-![Minimized windows panel](docs/screenshots/minimizer-panel.png)
+![Noctalia Minimize window panel (earlier branding)](docs/screenshots/minimizer-panel.png)
+
+*Screenshot from the earlier branding; the current panel is titled Noctalia Minimize.*
 
 ## Features
 
 | | |
 |---|---|
 | `Super+M` | Minimize the focused window |
-| `Super+Shift+M` | Open the **Minimized windows** panel |
+| `Super+Shift+M` | Open the **Noctalia Minimize** panel |
 | Panel | List minimized windows with app icon, title, app id and the workspace each returns to; restore one, restore all, minimize the active window, minimize all (with confirmation) |
 | Keyboard | `↑`/`↓` select · `Enter` restore · `Ctrl+A` restore all · `Ctrl+R` refresh · `Esc` close |
 | Bar widget | Left click minimizes, right click opens the panel |
-| Control-center tile | "Minimize active window" |
+| Control-center tile | "Noctalia Minimize · Minimize active window" |
 | Taskbar restore | Selecting a parked window in Noctalia's taskbar/switcher restores it (optional) |
 | Optional bindings | Minimize all, restore all, restore last (NixOS module options) |
 
@@ -56,7 +60,7 @@ Behaviour details:
 # flake.nix
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-  inputs.noctalia-minimizer.url = "github:SwashX-dev/Noc-minimizer";
+  inputs.noctalia-minimizer.url = "github:SwashX-dev/Noctalia-Minimize";
   inputs.noctalia-minimizer.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = { nixpkgs, noctalia-minimizer, ... }: {
@@ -96,7 +100,7 @@ sudo nixos-rebuild build && sudo nixos-rebuild switch
 ### Other systems with Nix (per user)
 
 ```bash
-nix profile add github:SwashX-dev/Noc-minimizer
+nix profile add github:SwashX-dev/Noctalia-Minimize
 ```
 
 This installs `noctalia-minimizer`, `noctalia-minimizer-setup` and the plugin under
@@ -150,7 +154,7 @@ Conflicts:
 - Or choose different keys (module options below, or edit the binding file).
 
 Manual alternative: add the include line yourself, and in Noctalia's settings add a path source
-pointing at `/run/current-system/sw/share/noctalia-minimizer/plugins`, then enable "Minimizer".
+pointing at `/run/current-system/sw/share/noctalia-minimizer/plugins`, then enable "Noctalia Minimize".
 To put the button on a bar, add a widget of type `local/minimizer:minimize-button`:
 
 ```toml
@@ -167,7 +171,7 @@ The binding file contains:
 ```kdl
 binds {
     Mod+M hotkey-overlay-title="Minimize active window" { spawn "noctalia" "msg" "plugin" "local/minimizer:actions" "all" "minimize"; }
-    Mod+Shift+M hotkey-overlay-title="Minimized windows" { spawn "noctalia" "msg" "plugin" "local/minimizer:actions" "all" "windows"; }
+    Mod+Shift+M hotkey-overlay-title="Noctalia Minimize" { spawn "noctalia" "msg" "plugin" "local/minimizer:actions" "all" "windows"; }
 }
 ```
 
@@ -191,7 +195,7 @@ The service also accepts the events `minimize-all`, `restore-all` and `restore-l
 The module asserts that the chosen chords are distinct. It cannot see your per-user Niri config,
 so use `noctalia-minimizer-setup check` to detect conflicts there.
 
-### Plugin settings (Noctalia → Settings → Plugins → Minimizer)
+### Plugin settings (Noctalia → Settings → Plugins → Noctalia Minimize)
 
 | Key | Default | |
 |---|---|---|

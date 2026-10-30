@@ -1,5 +1,5 @@
 {
-  description = "Noctalia Minimizer: reversible window minimization for Niri (Noctalia Shell plugin)";
+  description = "Noctalia Minimize: reversible window minimization for Niri (Noctalia Shell plugin)";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 

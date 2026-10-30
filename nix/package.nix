@@ -33,7 +33,7 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
   meta = {
-    description = "Reversible window minimization for Niri as a native Noctalia Shell plugin";
+    description = "Noctalia Minimize: reversible window minimization for Niri";
     license = lib.licenses.mit;
     platforms = lib.platforms.linux;
     mainProgram = "noctalia-minimizer";

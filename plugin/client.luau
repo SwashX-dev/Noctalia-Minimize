@@ -14,7 +14,7 @@ function M.request(arguments, callback)
         if result.timedOut then
             callback(nil, "The window backend timed out; Niri may be busy")
         elseif type(data) ~= "table" then
-            callback(nil, "Minimizer did not return valid data. Check that noctalia-minimizer is installed.")
+            callback(nil, "Noctalia Minimize did not return valid data. Check that noctalia-minimizer is installed.")
         elseif data.error then
             callback(nil, tostring(data.error))
         elseif result.exitCode ~= 0 then
@@ -23,7 +23,7 @@ function M.request(arguments, callback)
             callback(data, nil)
         end
     end, 10000)
-    if not accepted then callback(nil, "Could not start the Minimizer backend") end
+    if not accepted then callback(nil, "Could not start the Noctalia Minimize backend") end
 end
 
 local function report(title)

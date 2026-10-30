@@ -83,13 +83,13 @@ render = function()
         ui.row({gap = 12, align = "center"}, {
             ui.glyph({name = "window-minimize", size = 28, color = "primary"}),
             ui.column({gap = 3, flexGrow = 1}, {
-                ui.label({text = "Minimized windows", fontSize = 22, fontWeight = "bold"}),
+                ui.label({text = "Noctalia Minimize", fontSize = 22, fontWeight = "bold"}),
                 ui.label({text = "Niri workspace parking · apps keep running", color = "on_surface_variant"}),
             }),
             ui.button({glyph = "refresh", tooltip = "Refresh · Ctrl+R", enabled = not busy, onClick = function() refresh() end}),
             ui.button({glyph = "x", tooltip = "Close · Esc", onClick = function() panel.close() end}),
         }),
-        ui.label({text = enabled and message or "Minimizer is disabled in plugin settings", color = "primary", maxLines = 3}),
+        ui.label({text = enabled and message or "Noctalia Minimize is disabled in plugin settings", color = "primary", maxLines = 3}),
     }
     if snapshot and enabled then
         local active = snapshot.focused

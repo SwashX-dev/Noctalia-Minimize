@@ -1,8 +1,8 @@
 id = "local/minimizer"
-name = "Minimizer"
-version = "1.0.0"
+name = "Noctalia Minimize"
+version = "1.0.1"
 plugin_api = 24
-author = "local"
+author = "SwashX-dev"
 license = "MIT"
 icon = "window-minimize"
 description = "Reversible window minimization for Niri using workspace parking, with a restore panel."
